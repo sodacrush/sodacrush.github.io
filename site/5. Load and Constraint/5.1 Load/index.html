@@ -1,0 +1,1741 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://sodacrush.github.io/5.%20Load%20and%20Constraint/5.1%20Load/">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.7">
+    
+    
+      
+        <title>5.1 Load - MKDocs TEST</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f1641412.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#load" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://sodacrush.github.io" title="MKDocs TEST" class="md-header-nav__button md-logo" aria-label="MKDocs TEST">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            MKDocs TEST
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              5.1 Load
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/sodacrush/sodacrush.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sodacrush/sodacrush.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://sodacrush.github.io" title="MKDocs TEST" class="md-nav__button md-logo" aria-label="MKDocs TEST">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    MKDocs TEST
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/sodacrush/sodacrush.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sodacrush/sodacrush.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome to MkDocs" class="md-nav__link">
+      Welcome to MkDocs
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../1.%20Introduction/" title="1. Introduction" class="md-nav__link">
+      1. Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      2. Node
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="2. Node" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        2. Node
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.%20Node/2.0%20Introduction/" title="2.0 Introduction" class="md-nav__link">
+      2.0 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.%20Node/2.1%20Node/" title="2.1 Node" class="md-nav__link">
+      2.1 Node
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.%20Node/2.2%20NSet/" title="2.2 NSet" class="md-nav__link">
+      2.2 NSet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.%20Node/2.3%20NGen/" title="2.3 NGen" class="md-nav__link">
+      2.3 NGen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.%20Node/2.4%20NFill/" title="2.4 NFill" class="md-nav__link">
+      2.4 NFill
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.%20Node/2.5%20NCopy/" title="2.5 NCopy" class="md-nav__link">
+      2.5 NCopy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      3. Element
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="3. Element" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        3. Element
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.%20Element/3.0%20Introduction/" title="3.0 Introduction" class="md-nav__link">
+      3.0 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.%20Element/3.1%20Element/" title="3.1 Element" class="md-nav__link">
+      3.1 Element
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.%20Element/3.2%20Section/" title="3.2 Section" class="md-nav__link">
+      3.2 Section
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.%20Element/3.3%20ELGen/" title="3.3 ELGen" class="md-nav__link">
+      3.3 ELGen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.%20Element/3.4%20ELSet/" title="3.4 ELSet" class="md-nav__link">
+      3.4 ELSet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.%20Element/3.5%20ELCopy/" title="3.5 ELCopy" class="md-nav__link">
+      3.5 ELCopy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      4. Element Specification
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="4. Element Specification" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        4. Element Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.0%20Introduction/" title="4.0 Introduction" class="md-nav__link">
+      4.0 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.1%20Truss/" title="4.1 Truss" class="md-nav__link">
+      4.1 Truss
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.10%20UM%20Solid/" title="4.10 UM Solid" class="md-nav__link">
+      4.10 UM Solid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.11%20MCK/" title="4.11 MCK" class="md-nav__link">
+      4.11 MCK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.12%20Moving%20Spring/" title="4.12 Moving Spring" class="md-nav__link">
+      4.12 Moving Spring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.13%20Interface/" title="4.13 Interface" class="md-nav__link">
+      4.13 Interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.2%20Cable/" title="4.2 Cable" class="md-nav__link">
+      4.2 Cable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.3%20EmbeddedLine/" title="4.3 EmbeddedLine" class="md-nav__link">
+      4.3 EmbeddedLine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.5%20Shell/" title="4.5 Shell" class="md-nav__link">
+      4.5 Shell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.6%20Solid/" title="4.6 Solid" class="md-nav__link">
+      4.6 Solid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.7%20Acoustic%20Solid/" title="4.7 Acoustic Solid" class="md-nav__link">
+      4.7 Acoustic Solid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.8%20UU%20Solid/" title="4.8 UU Solid" class="md-nav__link">
+      4.8 UU Solid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.9%20UT%20Solid/" title="4.9 UT Solid" class="md-nav__link">
+      4.9 UT Solid
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-14" type="checkbox" id="nav-5-14">
+    
+    <label class="md-nav__link" for="nav-5-14">
+      4.4 Beam
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="4.4 Beam" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-14">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        4.4 Beam
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.4%20Beam/4.4.0%20Introudction/" title="4.4.0 Introudction" class="md-nav__link">
+      4.4.0 Introudction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.4%20Beam/4.4.1%20ElasticBeam/" title="4.4.1 ElasticBeam" class="md-nav__link">
+      4.4.1 ElasticBeam
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4.%20Element%20Specification/4.4%20Beam/4.4.2%20MeshBeam/" title="4.4.2 MeshBeam" class="md-nav__link">
+      4.4.2 MeshBeam
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      5. Load and Constraint
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="5. Load and Constraint" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        5. Load and Constraint
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5.0%20Introduction/" title="하중과 구속조건" class="md-nav__link">
+      하중과 구속조건
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5.1 Load
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="5.1 Load" class="md-nav__link md-nav__link--active">
+      5.1 Load
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#load" class="md-nav__link">
+    *Load
+  </a>
+  
+    <nav class="md-nav" aria-label="*Load">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concentric" class="md-nav__link">
+    집중하중(Concentric)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    경계조건(Support)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displacement" class="md-nav__link">
+    변위 하중(Displacement)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gravity" class="md-nav__link">
+    자중 (Gravity)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature" class="md-nav__link">
+    온도하중(Temperature)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beampoint-beamdistributted-beamtraction" class="md-nav__link">
+    보하중(BeamPoint, BeamDistributted, BeamTraction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edgepoint-edgedistributed-edgetraction" class="md-nav__link">
+    요소 모서리 하중(EdgePoint, EdgeDistributed, EdgeTraction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facepoint-facedistributed-facepressure" class="md-nav__link">
+    요소 면하중(FacePoint, FaceDistributed, FacePressure)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linemoving-surfacemoving-pedestrianmoving" class="md-nav__link">
+    이동하중(LineMoving, SurfaceMoving, PedestrianMoving)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5.2%20Constraint/" title="5.2 Constraint" class="md-nav__link">
+      5.2 Constraint
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      6. Properties
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="6. Properties" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        6. Properties
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../6.%20Properties/6.0%20Introduction/" title="6.0 Introduction" class="md-nav__link">
+      6.0 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../6.%20Properties/6.1%20Material/" title="6.1 Material" class="md-nav__link">
+      6.1 Material
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../6.%20Properties/6.2%20Function/" title="6.2 Function" class="md-nav__link">
+      6.2 Function
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../6.%20Properties/6.3%20Geometry/" title="6.3 Geometry" class="md-nav__link">
+      6.3 Geometry
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../6.%20Properties/6.4%20CoordinateSystem/" title="6.4 CoordinateSystem" class="md-nav__link">
+      6.4 CoordinateSystem
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      7. Step
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="7. Step" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        7. Step
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.0%20Introduction/" title="7.0 Introduction" class="md-nav__link">
+      7.0 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.1%20Step/" title="7.1 Step" class="md-nav__link">
+      7.1 Step
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.10%20Output%2C%20Print%20and%20History/" title="7.10 Output, Print and History" class="md-nav__link">
+      7.10 Output, Print and History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.11%20Check/" title="7.11 Check" class="md-nav__link">
+      7.11 Check
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.2%20Activate%20and%20Inactivate/" title="7.2 Activate and Inactivate" class="md-nav__link">
+      7.2 Activate and Inactivate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.3%20Convergency/" title="7.3 Convergency" class="md-nav__link">
+      7.3 Convergency
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.4%20SolutionAlgorithm/" title="7.4 SolutionAlgorithm" class="md-nav__link">
+      7.4 SolutionAlgorithm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.5%20TimeIntegration/" title="7.5 TimeIntegration" class="md-nav__link">
+      7.5 TimeIntegration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.6%20RayleighDamping/" title="7.6 RayleighDamping" class="md-nav__link">
+      7.6 RayleighDamping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.7%20Modal/" title="7.7 Modal" class="md-nav__link">
+      7.7 Modal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.8%20Field/" title="7.8 Field" class="md-nav__link">
+      7.8 Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../7.%20Step/7.9%20Speed/" title="7.9 Speed" class="md-nav__link">
+      7.9 Speed
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      8. Etc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="8. Etc" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        8. Etc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8.%20Etc/8.0%20Introduction/" title="8.0 Introduction" class="md-nav__link">
+      8.0 Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8.%20Etc/8.1%20Title/" title="8.1 Title" class="md-nav__link">
+      8.1 Title
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8.%20Etc/8.2%20Include/" title="8.2 Include" class="md-nav__link">
+      8.2 Include
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8.%20Etc/8.3%20Distribution/" title="8.3 Distribution" class="md-nav__link">
+      8.3 Distribution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8.%20Etc/8.4%20Control/" title="8.4 Control" class="md-nav__link">
+      8.4 Control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8.%20Etc/8.5%20TestMaterial/" title="8.5 TestMaterial" class="md-nav__link">
+      8.5 TestMaterial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#load" class="md-nav__link">
+    *Load
+  </a>
+  
+    <nav class="md-nav" aria-label="*Load">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concentric" class="md-nav__link">
+    집중하중(Concentric)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    경계조건(Support)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displacement" class="md-nav__link">
+    변위 하중(Displacement)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gravity" class="md-nav__link">
+    자중 (Gravity)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature" class="md-nav__link">
+    온도하중(Temperature)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beampoint-beamdistributted-beamtraction" class="md-nav__link">
+    보하중(BeamPoint, BeamDistributted, BeamTraction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edgepoint-edgedistributed-edgetraction" class="md-nav__link">
+    요소 모서리 하중(EdgePoint, EdgeDistributed, EdgeTraction)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#facepoint-facedistributed-facepressure" class="md-nav__link">
+    요소 면하중(FacePoint, FaceDistributed, FacePressure)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linemoving-surfacemoving-pedestrianmoving" class="md-nav__link">
+    이동하중(LineMoving, SurfaceMoving, PedestrianMoving)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/sodacrush/sodacrush.github.io/edit/master/docs/5. Load and Constraint/5.1 Load.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>5.1 Load</h1>
+                
+                <h2 id="load">*Load</h2>
+<p>Define lod</p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=load_type, Name=load_name, [Func=func, ...]
+  ...
+</code></pre></div>
+
+<p><strong>Parameters for keyword line</strong></p>
+<ul>
+<li><strong>TYPE=type</strong> : 하중의 종류<ul>
+<li><strong>Concentric</strong> : Nodal concentric load</li>
+<li><strong>Support</strong> : Nodal zero boundary condition</li>
+<li><strong>Displacement</strong> : Nodal dispalcement load( boundary condition )</li>
+<li><strong>Temperature</strong> : Temperature laod(element load)</li>
+</ul>
+</li>
+<li><strong>Name=load_name</strong> : 하중의 이름</li>
+<li><strong>Func=func</strong> : 시간함수. 하중 유형 및 해석 유형에 따라 필요할 수 있음. </li>
+</ul>
+<p>Step part에서 __*LOAD__을 사용할 경우 새로 정의되는 하중은 현 step에서 activation된다.<code>확인 필요</code></p>
+<h3 id="concentric">집중하중(Concentric)</h3>
+<p>절점에 가력되는 집중하중을 지정한다.</p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Concentric, Name=name, FUNC=timeFunction
+ target dof value
+ ...
+</code></pre></div>
+
+<p><strong>Parameters for data line</strong></p>
+<ul>
+<li><strong>target</strong> : target node or nodeset(required)</li>
+<li><strong>dof</strong> : 대상이 되는 DOF. DOF는 X, Y, Z, RX, RY, RZ 등이 될 수 있다.(required)</li>
+<li><strong>value</strong> : value(required)</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Concentric, Name=A
+  1001 X 10.
+
+*LOAD, TYPE=Concentric, Name=B
+  Func=baseMotion
+  base X 10.
+</code></pre></div>
+
+<h3 id="support">경계조건(Support)</h3>
+<p>고정된 경계조건(항상 변위가 0인)을 정의한다. </p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Support, Name=name
+  target,dof1,dof2,...
+  ...
+</code></pre></div>
+
+<p><strong>Parameters for data line</strong></p>
+<ul>
+<li><strong>target</strong> : target node or nodeset(required)</li>
+<li><strong>dof1, dof2, ...</strong> : degree-of-freedoms(required). They should be be one of X, Y, Z, RX, RY, and RZ.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Support, Name=initialBC
+1 X,Y
+all Z,RX,RY
+</code></pre></div>
+
+<h3 id="displacement">변위 하중(Displacement)</h3>
+<p>0이 아닌 값을 가지는 변위 하중을 지정</p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Displacement, Name=name, Func=dFunc,vFunc,aFunc
+ target dof value
+ ...
+</code></pre></div>
+
+<p><strong>Parameters for data line</strong></p>
+<ul>
+<li><strong>target</strong> : target node or nodeset(required)</li>
+<li><strong>dof</strong> : 대상이 되는 DOF(required). DOF는 X, Y, Z, RX, RY, RZ 등이 될 수 있다.</li>
+<li><strong>value</strong> : value(required)</li>
+</ul>
+<p>Func = dFunc, vFunc, aFunc :Dynamic step의 경우 dFunc, vFunc, aFunc가 필요하다. 각각 변위, 속도, 가속도에 대한 시간함수이다. Quasi-static step의 경우 dFunc 만 필요하다. </p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Displacement Name=A
+  1001 X 10.
+
+*LOAD, TYPE=Displacement Name=B Func=dFunc,vFunc,aFunc
+  base X 10.
+</code></pre></div>
+
+<h3 id="gravity">자중 (Gravity)</h3>
+<p>자중을 부과한다. </p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Gravity Name=name Func=timeFunction
+ target gx gy gz
+ ...
+</code></pre></div>
+
+<p><strong>Parameters for data line</strong>
+- <strong>target</strong> : target element or element set(required)
+- <strong>gx, gy, gz</strong> : Gravity Vector(optional, default 0,0,0)</p>
+<p>Gravity Load가 활성화되기 위해서는 적용되는 요소의 물성치로 질량이 주어져 있어야 한다. </p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Gravity Name=SelfWeight
+  Slab, 0. 0. -9.81
+  Girder, 0. 0. -9.81
+</code></pre></div>
+
+<h3 id="temperature">온도하중(Temperature)</h3>
+<p>요소의 Temperature 하중을 지정하는 경우</p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Temperature, Name=name Func=timeFunction
+ target, T, Ty, Tz
+ ...
+</code></pre></div>
+
+<p><strong>Parameters for data line</strong></p>
+<ul>
+<li><strong>target</strong> : target element or element set(required)</li>
+<li><strong>T, Ty, Tz</strong> : temperature and temperature gradient change(optional, default 0,0,0)</li>
+</ul>
+<p>요소에 동일한 온도변화(uniform temperature change)가 가해질 때 사용
+Note. Currently only ElasticBeam2D, ElasticBeam3D available. Other element is not supported YET!!!</p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=Temperature Name=A
+  1001 10.
+</code></pre></div></p>
+<h3 id="beampoint-beamdistributted-beamtraction">보하중(BeamPoint, BeamDistributted, BeamTraction)</h3>
+<p>보 요소 위의 집중하중, 분포하중, 트랙션 하중 </p>
+<p><div class="highlight"><pre><span></span><code>*LOAD, TYPE=BeamPoint Name=name Func=timeFunction
+ element Pos=r P=Px Py Pz 
+ ...
+
+*LOAD, TYPE=BeamDistributed, Name=name, Func=timeFunction
+ target, P=px, py, pz
+ target, P=px1, py1, pz1, px2, py2, pz2
+ ...
+
+*LOAD, TYPE=BeamTraction, Name=name, Func=timeFunction
+ target, P=pt1, pyn1, pzn1, pt2, pyn2, pzn2
+ target, P=pt, pyn, pzn
+ ...
+</code></pre></div>
+<strong>Parameters for data line for BeamPoint</strong></p>
+<ul>
+<li><strong>element</strong> : targe element(required). It must be Beam2D or Beam3D or their derivatives</li>
+<li><strong>Pos=r</strong> : positon from starting node, in natural coordinate, [-1 +1] (required)</li>
+<li><strong>P=Px, Py, Pz</strong> : Point load vector applied at pos in global coordinate systems(optional, but greator than one term should be given. default 0,0,0). In 2D beam, Pz is neglected.</li>
+</ul>
+<p><strong>Parameters for data line for BeamDistributed</strong></p>
+<ul>
+<li><strong>target</strong> : targe element or elementset(required). It must be Beam2D or Beam3D or their derivatives</li>
+<li><strong>P=px1, py1, pz1, px2, py2, pz2</strong> : Distributed load vector in global coordinate systems(required). The internal intensity of load is interpolated. In 2D beam, pz1 and pz2 are neglected.</li>
+<li><strong>P=px, py, pz</strong> : Uniform distributed load vector in global coordinate systems(optional, but greator than one term should be given. default 0,0,0). In 2D beam, pz is neglected.</li>
+</ul>
+<p><strong>Parameters for data line for BeamDistributed</strong></p>
+<ul>
+<li>target : targe element or elementset(required). It must be Beam2D or Beam3D or their derivatives</li>
+<li>P = pt1, pyn1, pzn1, pt2, pyn2, pzn2 : Traction vector at each element nodes. The internal intensity of load is interpolated. In 2D beam, pzn1 and pzn2 are neglected.</li>
+<li>P = pt, pyn, pzn : Uniform traction vector in global coordinate systems. In 2D beam, pzn is neglected.</li>
+</ul>
+<p>보 요소 하중으로는 BeamPointLoad, BeamDistributedLoad, BeamTractionLoad가 있다. BeamPointLoad는 요소내의 점하중이며, 전체좌표계에서 점하중을 정의한다. BeamDistributedLoad와 BeamTractionLoad는 분포하중이며, 각각 전체좌표계 및 국부좌표계에서 정의하는 하중이다. </p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=BeamPoint, Name=Load1
+  side1 Pos=0.1 P=0.,10., 10.
+
+*LOAD, TYPE=BeamDistributed, Name=Load2
+  side1, P=0.,10.,1.
+
+*LOAD, TYPE=BeamTraction, Name=Load3
+  side1 P=10.
+</code></pre></div></p>
+<h3 id="edgepoint-edgedistributed-edgetraction">요소 모서리 하중(EdgePoint, EdgeDistributed, EdgeTraction)</h3>
+<p>Point load on the edge of element</p>
+<p><div class="highlight"><pre><span></span><code>*LOAD, TYPE=EdgePoint, Name=name Func=timeFunction
+ element Edge=iedge Pos=pos, yPos P=Px Py Pz 
+ ...
+
+*LOAD, TYPE=EdgeDistributed, Name=name Func=timeFunction
+ target Edge=iedge P=px1 py1 pz1 ... pxn pyn pzn
+ target Edge=iedge P=px py pz
+ ...
+
+*LOAD, TYPE=EdgeTraction, Name=name Func=timeFunction
+ element Edge=iedge P=pt1 pyn1 pzn1 ... ptn pynn pznn
+ element Edge=iedge P=pt pyn pzn
+ elementset P=pt pyn pzn
+ ...
+</code></pre></div>
+<strong>Parameters for data line for EdgePoint</strong></p>
+<ul>
+<li>element :element (required)</li>
+<li>Edge=iedge : edge number, depends on element type. (required). edge number is zero-based </li>
+<li>Pos=pos : positon from starting node in the beam element (required)</li>
+<li>P=Px, Py, Pz : Point load vector applied at pos in global coordinate systems(optional, but greator than one term should be given. default 0,0,0). In the edge of 2D elements like PSQuad4, Pz is neglected.</li>
+</ul>
+<p><strong>Parameters for data line for EdgeDistributed</strong></p>
+<ul>
+<li>target : element or element set (required)</li>
+<li>Edge=iedge : edge number, depends on element type.  edge number is zero-based </li>
+<li>P=px1, py1, pz1, ... pxn, pyn, pzn : Distributed load vector in global coordinate systems. The internal intensity of load is interpolated. In the edge of 2D elements like PSQuad4, pz1 and pz2 are neglected.</li>
+<li>P=px, py, pz : Uniform distributed load vector in global coordinate systems. In the edge of 2D elements like PSQuad4, pz is neglected.</li>
+</ul>
+<p><strong>Parameters for data line for EdgeTraction</strong></p>
+<ul>
+<li>target : element or element set (required)</li>
+<li>Edge=iedge : edge number, depends on element type.  edge number is zero-based </li>
+<li>P = pt1, pyn1, pzn1, ... ptn, pynn, pznn : Distributed traction at each edge nodes. The internal intensity of load is interpolated. In the edge of 2D elements like PSQuad4, pz1 and pz2 are neglected.</li>
+<li>P = pt, pyn, pzn : Uniform traction vector in global coordinate systems. In the edge of 2D elements like PSQuad4, pz is neglected.</li>
+</ul>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=EdgePoint, Name=Load1
+  side1 Edge=0 Pos=0.1 P=0.,10., 10.
+
+*LOAD, TYPE=EdgeDistributed, Name=Load1
+  side1 Edge=1 P=0.,10.,1.
+
+*LOAD, TYPE=EdgeTraction, Name=Load1
+  side1 Edge=0 P=0,10.
+</code></pre></div></p>
+<p>요소의 모서리에 가력하는 요소하중은 EdgePointLoad, EdgeDistributedLoad, EdgeTractionLoad가 있다. EdgePointLoad는 요소내의 점하중이며, 전체좌표계에서 점하중을 정의한다. EdgeDistributedLoad와 EdgeTractionLoad는 분포하중이며, 각각 전체좌표계 및 국부좌표계에서 정의하는 하중이다. </p>
+<h3 id="facepoint-facedistributed-facepressure">요소 면하중(FacePoint, FaceDistributed, FacePressure)</h3>
+<p>요소의 면에 작용하는 집중하중, 분포하중, 압력
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=FacePoint, Name=name Func=timeFunction
+ element Face=iface Pos=r,s P=Px Py Pz
+ ...
+
+*LOAD, TYPE=FaceDistributed, Name=name, Func=timeFunction
+ element Face=iface P=px1 py1 pz1 px2 py2 pz2 ...pxn pyn pzn
+ element Face=iface P=px py pz
+ elementset Face=iface P=px py pz
+ ...
+
+*LOAD, TYPE=FacePressure Name=name Func=timeFunction
+ element Face=iface P=pn1,pn2,...pnn
+ element Face=iface P=pn
+ elementSet Face=iface P=pn
+ ...
+</code></pre></div></p>
+<p><strong>Parameters for data line for FacePoint</strong></p>
+<ul>
+<li><strong>element</strong> : targe element. </li>
+<li><strong>Face= iface</strong> : element face number. See the *GEOMERTY, TYPE=SURFACE command.</li>
+<li><strong>Pos=r,s</strong> :  Loading position in natural coordinate system.</li>
+<li><strong>P=Px,Py,Pz</strong> : Point load vector in global coordinate system. </li>
+</ul>
+<p><strong>Parameters for data line for FaceDistributed</strong></p>
+<p>-<strong>element</strong> :targe element. 
+-<strong>elementSet</strong> : target elementset
+-<strong>Face=iface</strong> : element face number. See the *GEOMERTY, TYPE=SURFACE command.
+-<strong>P=px1, py1, pz1 ... pxn,pyn,pzn</strong> : Dstributed loads at each element nodes in global coordinate system. The number of terms depends on element type.  Internal intensity of load is interpolated.
+-<strong>P=px, py, pz</strong> : Uniform distributed laod vector in global coordinate system. </p>
+<p><strong>Parameters for data line for FacePressure</strong></p>
+<ul>
+<li>__element : targe element. </li>
+<li>__elementSet : target elementset</li>
+<li><strong>Face=iface</strong> : element face number. See the *GEOMERTY, TYPE=SURFACE command.</li>
+<li><strong>P=p1, p2, ..., pn</strong> : pressure at each element nodes. The number of terms depends on element type. The internal intensity of pressure is interpolated. </li>
+<li><strong>P=p</strong> : uniform pressure acting on surface</li>
+</ul>
+<p>요소의 면에 가력되는 하중으로는 면내의 임의 점에 가력되는 EdgePointLoad, 분포하중 EdgeDistributedLoad, EdgePressureLoad 등이 있다. </p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=FacePoint, Name=load1
+  1 0 Pos=0.1,0.1 P=0.,1.,0.
+
+*LOAD, TYPE=FaceDistributed, Name=load2
+  side1  P=0.,10.
+
+*LOAD, TYPE=FacePressure, Name=load3
+  surface P=10.
+</code></pre></div></p>
+<h3 id="linemoving-surfacemoving-pedestrianmoving">이동하중(LineMoving, SurfaceMoving, PedestrianMoving)</h3>
+<p>선과 면 위의 이동하중, 도보하중 </p>
+<div class="highlight"><pre><span></span><code>*LOAD, TYPE=LineMoving, Name=name 
+  LINE=line1,line2, Speed=speed
+  x Px Py Pz Mx My Mz
+  ...
+
+*LOAD, TYPE=SurfaceMoving, Name=name 
+ Surface=surface, Ref=rx ry rz Speed=speed Dir=vx,vy,vz
+ x y Px Py Pz
+ ...
+
+*LOAD, TYPE=PedestrianMoving, Name=Moving
+ Surface=surf Ref=-15.6425,-.138,9.9655 Dir=0.591,  0,  -0.377
+ 0.5,0.7    # interval, stride
+ SINE,0,-700,0,2,0.02       # type,Wx,Wy,Wz,F/W,contactDuration
+</code></pre></div>
+
+<p><strong>Parameters for first data line for LineMoving</strong></p>
+<ul>
+<li>LINE=line1, line2 : target lines, line1은 필수이고 line2는 옵션</li>
+<li>Speed=speed : speed (required)</li>
+</ul>
+<p><strong>Parameters for second data line and subsequent datalines for LineMoving</strong></p>
+<ul>
+<li>x :초기위치(required)</li>
+<li>Px,Py,Pz,Mx,My,Mz :전체좌표계상의 하중벡터, 라인세그먼트가 보가 아닌 경우 Mx, My, Mz는 무시된다.(optional, but greator than one term should be given. default 0,0,0,0,0,0). I</li>
+</ul>
+<p><strong>Parameters for first data line for SurfaceMoving</strong></p>
+<ul>
+<li>surface : target surface (required)</li>
+<li>rx ry rz : reference point in global coordinate(optional, default 0,0,0.)</li>
+<li>speed : speed (required)</li>
+<li>vx,vy,vz : direction of moving in global coordinate system(optional, default 1,0,0)</li>
+</ul>
+<p><strong>Parameters for second data line and subsequent datalines for SurfaceMoving</strong></p>
+<ul>
+<li>x,y : offset coordinates in local plane with origin from current reference point.</li>
+<li>Px,Py,Pz : Load vector in global coordinate system</li>
+</ul>
+<p><strong>Parameters for first data line for PedestrianMoving</strong></p>
+<p>SINE은 고정(아직 옵션이 없음)</p>
+<p><strong>Example</strong>
+<div class="highlight"><pre><span></span><code>*GEOMETRY, TYPE=Line Name=L1
+ BeamLine
+ Q4Line Edge=1
+
+*LOAD, TYPE=LineMoving Name=L1
+  LINE=L1 Speed=10. 
+   0. 0.,0.,10.
+  -1. 0.,0.,20.
+  -3. 0.,0.,20.
+
+*GEOMERTY, TYPE=Line Name=L2
+ BeamLine
+
+*LOAD, TYPE=LineMoving, Name=L2
+  LINE=L1 Speed=10. 
+   0. 0.,0.,-10.,0.,0.,10.
+  -1. 0.,0.,-20.,0.,0.,20.
+  -3. 0.,0.,-20.,0.,0.,20.
+
+
+*GEOMETRY, TYPE=Surface, Name=L1
+ upperface 0             # elemnt_set iside
+
+*LOAD, TYPE=SurfaceMoving, Name=L1
+  Surface=L1 Ref=1. 0. 0 Speed=10. Dir = 1. 0. 0.
+   0. 0. 10. 0. 0.
+  -1. 0. 20. 0. 0.
+  -3. 0. 20. 0. 0.
+
+*LOAD, TYPE=PedestrianMoving, Name=Moving
+ Surface=surf Ref=-15.6425,-.138,9.9655 Dir=0.591,  0,  -0.377
+ 0.5,0.7    # interval, stride
+ SINE,0,-700,0,2,0.02       # type,Wx,Wy,Wz,F/W,contactDuration
+</code></pre></div></p>
+<p>보요소 또는 요소의 모서리(edge)로 구성된 라인(line)을 지나는 이동하중을 지정한다. *GEOMETRY,TYPE=LINE에서 정의하는 라인은 보요소 및 모서리로 구성된다. 라인은 정의할 때 라인세그먼트는 연속성이 보장되어 있어야 한다. 이를 위해 절점을 공유하거나 분리된 절점인 경우에는 좌표값이 같아야 한다. </p>
+<p>철도하중과 같이 2개의 라인을 구르는 하중에 대해서는 두 개의 라인을 지정할 수 있다. 이 경우 두 라인은 평행한 두 개의 라인으로 구성되어야 하며 길이가 서로 같아야 한다. 두 라인이 지정되면 주어진 하중은 &frac12;씩 각 라인으로 분배된다. </p>
+<p>요소의 면에 작용하는 SurfaceMovingLoad를 정의한다. Shell 요소 또는 Solid 요소의 면을 지나는 이동하중을 지정한다.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../5.0%20Introduction/" title="하중과 구속조건" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                하중과 구속조건
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../5.2%20Constraint/" title="5.2 Constraint" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                5.2 Constraint
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b7ed72fe.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
