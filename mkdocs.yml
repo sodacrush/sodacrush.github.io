@@ -1,0 +1,10 @@
+site_name: MKDocs TEST
+
+theme:
+  name: material
+  custom_dir: overrides
+
+use_directory_urls: true
+
+extra_css:
+  - stylesheets/extra.css
