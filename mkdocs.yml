@@ -1,4 +1,7 @@
 site_name: MKDocs TEST
+site_url: https://sodacrush.github.io
+repo_name: sodacrush/sodacrush.github.io
+repo_url: https://github.com/sodacrush/sodacrush.github.io
 
 theme:
   name: material
