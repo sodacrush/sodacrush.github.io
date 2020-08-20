@@ -1,5 +1,6 @@
 .md-content h1 {
-  font-weight: bold;
+  font-size: 25px;
+  font-weight: 300;
 }
 .md-nav--secondary {
   transition: border-left 0.25s;
